@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="ProjectModuleManager">
+    <modules>
+      <module fileurl="file://$PROJECT_DIR$/bot/bot.iml" filepath="$PROJECT_DIR$/bot/bot.iml" />
+      <module fileurl="file://$PROJECT_DIR$/hackamon/hackamon.iml" filepath="$PROJECT_DIR$/hackamon/hackamon.iml" />
+      <module fileurl="file://$PROJECT_DIR$/website/website.iml" filepath="$PROJECT_DIR$/website/website.iml" />
+    </modules>
+  </component>
+</project>
