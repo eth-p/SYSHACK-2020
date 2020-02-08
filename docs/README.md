@@ -5,6 +5,14 @@ Theme: Life Hacks
 
 # Title: Hackamon
 
+**TODO: **
+
+- Logo 
+- Badges
+- Creature Images (x4 ea.)
+
+
+
 
 
 # Types of Creatures
