@@ -1,0 +1,46 @@
+// ---------------------------------------------------------------------------------------------------------------------
+// Imports
+@import "./theme";
+// ---------------------------------------------------------------------------------------------------------------------
+// Globals
+$current_theme: $theme !global;
+// ---------------------------------------------------------------------------------------------------------------------
+
+///
+/// Only apply these styles to the Desktop layout.
+///
+@mixin desktop() {
+	@content;
+}
+
+///
+/// Only apply these styles to the Mobile layout.
+///
+@mixin mobile() {
+	// @content
+}
+
+///
+/// Applies theme variables to the content block.
+///
+@mixin themed() {
+	$current_theme: $theme_light !global;
+	@content;
+
+	//@media (prefers-color-scheme: dark) {
+	//	$current_theme: $theme_dark !global;
+	//	@content;
+	//}
+}
+
+///
+/// Gets the value of a theme variable.
+/// @param $variable The variable name.
+///
+@function theme($variable) {
+	@if map-has_key($current_theme, $variable) {
+		@return map-get($current_theme, $variable);
+	} @else {
+		@error "Unknown theme variable: #{$variable}";
+	}
+}

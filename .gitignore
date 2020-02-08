@@ -1,0 +1,8 @@
+# Build
+node_modules
+dist
+
+# Dev
+*.swp
+.DS_Store
+._*
