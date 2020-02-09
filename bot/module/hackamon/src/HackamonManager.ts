@@ -76,7 +76,7 @@ export default class HackamonManager extends Emitter {
 
 	spawn(force: boolean): void {
 		if (force || Math.random() >= this._config.spawn.spawnChance) {
-			const shiny = Math.random() >= this._config.spawn.shinyChance;
+			const shiny = this._config.spawn.shinyChance >= Math.random();
 			const hackamon = this.hackamon[Math.floor(this.hackamon.length * Math.random())];
 
 			this.logger.info('Spawning Hackamon', {hackamon, shiny});
