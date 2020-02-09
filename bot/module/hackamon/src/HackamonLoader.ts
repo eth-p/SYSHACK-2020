@@ -26,11 +26,11 @@ export default class HackamonLoader {
 	}
 
 	public getSpriteUrl(hackamon: Hackamon, instance: HackamonInstance): string {
-		return Path.join(this._assetsUrl, hackamon.assets[instance.shiny ? 'shiny' : 'regular'].sprite);
+		return `${this._assetsUrl}/` + hackamon.assets[instance.shiny ? 'shiny' : 'regular'].sprite;
 	}
 
 	public getImageUrl(hackamon: Hackamon, instance: HackamonInstance): string {
-		return Path.join(this._assetsUrl, hackamon.assets[instance.shiny ? 'shiny' : 'regular'].image);
+		return `${this._assetsUrl}/` + hackamon.assets[instance.shiny ? 'shiny' : 'regular'].image;
 	}
 
 }
