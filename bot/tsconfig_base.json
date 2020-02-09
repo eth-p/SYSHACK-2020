@@ -15,7 +15,8 @@
 			"$bot/*": ["module/bot/src/*"],
 			"$bounty/*": ["module/bounty/src/*"],
 			"$database/*": ["module/database/src/*"],
-			"$hackamon/*": ["module/hackamon/src/*"]
+			"$hackamon/*": ["module/hackamon/src/*"],
+			"$hackamon-wild/*": ["module/hackamon-wild/src/*"]
 		}
 	},
 	"exclude": [

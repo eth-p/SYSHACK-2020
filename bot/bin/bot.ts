@@ -5,6 +5,7 @@ import BotMain from "$bot/BotMain";
 import SimpleDatabase from "$database/SimpleDatabase";
 import BountyManager from "$bounty/BountyManager";
 import HackamonManager from "$hackamon/HackamonManager";
+import WildHackamonManager from "$hackamon-wild/WildHackamonManager";
 // ---------------------------------------------------------------------------------------------------------------------
 
 // Set up the config:
@@ -12,10 +13,11 @@ const config = {
 	bounty: {
 		request_channel: 'bounty',
 		log_channel: 'bounty-log',
-		notification_channel: 'bounty-notifications'
+		notification_channel: 'notifications'
 	},
 	hackamon: {
-		spawn_channel: 'wild-hackamon'
+		spawn_channel: 'wild-hackamon',
+		notification_channel: 'notifications'
 	}
 };
 
@@ -48,7 +50,7 @@ const logger = Winston.createLogger({
 	// Create the Hackamon manager.
 	const hackamon = new HackamonManager({
 		database: database,
-		debug: logger.child({module: 'bounty'}),
+		debug: logger.child({module: 'hackamon'}),
 		cdn: process.env['CDN_URL']!,
 		spec: process.env['HACKAMON_DIR']!,
 		spawn: {
@@ -58,6 +60,11 @@ const logger = Winston.createLogger({
 		},
 	});
 
+	const wild_hackamon = new WildHackamonManager({
+		database: database,
+		debug: logger.child({module: 'wild_hackamon'})
+	});
+
 	// Create the bot.
 	const bot = new BotMain({
 		token: args.DISCORD_TOKEN!,
@@ -65,7 +72,8 @@ const logger = Winston.createLogger({
 		config
 	}, {
 		bounty,
-		hackamon
+		hackamon,
+		wild_hackamon
 	});
 
 	await hackamon.load();

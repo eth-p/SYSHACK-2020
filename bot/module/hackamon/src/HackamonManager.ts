@@ -8,6 +8,12 @@ import {EventEmitter as Emitter} from "events";
 import Database from "$database/Database";
 import HackamonLoader from "$hackamon/HackamonLoader";
 import Hackamon from "./Hackamon";
+import * as LRUMap from "lru-cache";
+import BountyId from "$bounty/BountyId";
+import Bounty from "$bounty/Bounty";
+import * as UUID from "uuid/v4";
+import HackamonInstance from "$hackamon/HackamonInstance";
+import HackamonInstanceId from "$hackamon/HackamonInstanceId";
 
 
 /**
@@ -15,7 +21,7 @@ import Hackamon from "./Hackamon";
  */
 export default class HackamonManager extends Emitter {
 
-	public static DATABASE_TABLE = 'hackamon';
+	public static DATABASE_TABLE = 'wild_hackamon';
 
 	protected logger: Logger;
 	protected debug: Logger;
@@ -57,6 +63,10 @@ export default class HackamonManager extends Emitter {
 		this.hackamon = await Promise.all(files.map(f => this.hackamonLoader.load(f)));
 	}
 
+	public descriptor(kind: string): Hackamon|null {
+		return this.hackamon.find(hackamon => hackamon.id === kind) ?? null;
+	}
+
 	public setSpawning(enable: boolean): void {
 		if (enable) {
 			if (this._timer === null) {
@@ -80,7 +90,7 @@ export default class HackamonManager extends Emitter {
 			const hackamon = this.hackamon[Math.floor(this.hackamon.length * Math.random())];
 
 			this.logger.info('Spawning Hackamon', {hackamon, shiny});
-			this.emit('spawn', hackamon, {shiny});
+			this.emit('spawn', hackamon, {shiny, hackamon: hackamon.id});
 		}
 	}
 
@@ -89,12 +99,12 @@ export default class HackamonManager extends Emitter {
 export interface Config {
 
 	/**
-	 * The bounty manager logger.
+	 * The hackamon manager logger.
 	 */
 	logger?: Logger;
 
 	/**
-	 * The bounty manager debug logger.
+	 * The hackamon manager debug logger.
 	 */
 	debug?: Logger;
 

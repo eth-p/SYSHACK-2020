@@ -23,7 +23,6 @@ export default class HackamonSpawnController extends ControllerWithChannel {
 		this.config = config;
 
 		this.context.manager.hackamon.on('spawn', this._onSpawn.bind(this)); // TODO: Remove me on destroy.
-		// this.onDiscord('messageReactionAdd', this._onReaction);
 	}
 
 	private async _onSpawn(hackamon: Hackamon, instance: HackamonInstance) {
@@ -33,10 +32,14 @@ export default class HackamonSpawnController extends ControllerWithChannel {
 		const message = new MessageEmbed()
 			.setColor(instance.shiny ? 0xffe357 : 0xaddcff)
 			.setTitle(`A wild ${hackamon.name} appeared!`)
-			.setImage(imageUrl);
-			// .setFooter("React to catch it!");
+			.setImage(imageUrl)
+			.setFooter("React to catch it!");
 
-		await channel.send(message);
+		// Handle the
+		const sent = await channel.send(message);
+
+		instance.id = sent.id;
+		await this.context.manager.wild_hackamon.spawn(hackamon, instance);
 	}
 
 	// TODO: Proper listener removal.

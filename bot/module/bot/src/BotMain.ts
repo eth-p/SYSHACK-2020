@@ -8,17 +8,12 @@ import BountyManager from "$bounty/BountyManager";
 import BotInstance from "./BotInstance";
 import Context from "./Context";
 import HackamonManager from "$hackamon/HackamonManager";
+import WildHackamonManager from "$hackamon-wild/WildHackamonManager";
 
 /**
  * The main bot class.
  */
 export default class BotMain extends Emitter {
-
-	// public static readonly CLIENT_ID    = (process.env['DISCORD_CLIENT_ID'] as string) ?? null;
-	// public static readonly INVITE_LINK  = (process.env['DISCORD_INVITE'] as string) ?? null;
-	//
-	// public static readonly INVITE_PERMS = 336067696;
-	// public static readonly INVITE_URL   = `https://discordapp.com/api/oauth2/authorize?client_id={id}&scope=bot&permissions={perms}`;
 
 	private _config: Config;
 	private client: Discord.Client;
@@ -126,4 +121,5 @@ export interface Config {
 export interface Managers {
 	bounty: BountyManager;
 	hackamon: HackamonManager;
+	wild_hackamon: WildHackamonManager;
 }

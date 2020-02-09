@@ -1,4 +1,5 @@
 export default interface Hackamon {
+	id: string;
 	name: string;
 	type: string[];
 	stats: Stats;

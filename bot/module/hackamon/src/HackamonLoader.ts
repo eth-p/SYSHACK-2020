@@ -22,7 +22,9 @@ export default class HackamonLoader {
 
 	public async load(file: string): Promise<Hackamon> {
 		const data = await Filesystem.readFile(file, 'utf-8');
-		return Yaml.safeLoad(data);
+		const yaml = Yaml.safeLoad(data);
+		yaml.kind = Path.basename(file, Path.extname(file));
+		return yaml;
 	}
 
 	public getSpriteUrl(hackamon: Hackamon, instance: HackamonInstance): string {

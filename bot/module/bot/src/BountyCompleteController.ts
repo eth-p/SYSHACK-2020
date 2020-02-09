@@ -106,6 +106,12 @@ export default class BountyCompleteController extends ControllerWithChannel {
 			.setColor(0x00FF00)
 		);
 
+		await reply(this.context, completer, new MessageEmbed()
+			.setTitle("Great job completing that bounty!")
+			.setDescription('You have been awarded a Hackachip!')
+			.setColor(0xabeb34)
+		);
+
 		// Log.
 		this.context.logger.info("Bounty completed.", bounty, {
 			name: completer.tag,

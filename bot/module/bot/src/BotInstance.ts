@@ -7,6 +7,7 @@ import Context from "./Context";
 import Controller from "./Controller";
 import BountyCompleteController from "$bot/BountyCompleteController";
 import HackamonSpawnController from "$bot/HackamonSpawnController";
+import HackamonCatchController from "$bot/HackamonCatchController";
 
 /**
  * The bot running on some server.
@@ -35,6 +36,7 @@ export default class BotInstance extends Emitter {
 		this.controllers.set('BountyCancelController', new BountyCancelController(context, context.config.bounty));
 		this.controllers.set('BountyCompleteController', new BountyCompleteController(context, context.config.bounty));
 		this.controllers.set('HackamonSpawnController', new HackamonSpawnController(context, context.config.hackamon));
+		this.controllers.set('HackamonCatchController', new HackamonCatchController(context, context.config.hackamon));
 	}
 
 	public async refresh() {
