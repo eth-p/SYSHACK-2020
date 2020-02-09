@@ -7,6 +7,15 @@ The Hackamon application is a Discord bot which is the spiritual successor to th
 
 Users can post bounties which can be completed by other players for Hackachips. These Hackachips can be used to capture potentially rare Hackamons. These Hackamons can be collected and battled against other users on Discord.
 
+## Technology used
+
+- Discord.js
+- TypeScript
+- JavaScript
+- React
+- Webpack
+- Node.js
+
 ![img](https://i.imgur.com/4Op225k.png)
 
 ![img](https://i.imgur.com/5vh1DLb.png)
