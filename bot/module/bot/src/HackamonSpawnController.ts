@@ -2,16 +2,16 @@ import * as Discord from "discord.js";
 
 import Context from "./Context";
 import ControllerWithChannel from "$bot/ControllerWithChannel";
-import {Message, MessageEmbed} from "discord.js";
+import {Message, MessageEmbed, TextChannel} from "discord.js";
 import {BOUNTY_CANCEL_REACTION, BOUNTY_COMPLETE_REACTION} from "$bot/Common";
 import {getName} from "$bot/Util";
+import Hackamon from "$hackamon/Hackamon";
+import HackamonInstance from "$hackamon/HackamonInstance";
 
 /**
- * The controller for bounty requests.
+ * The controller for spawning hackamons.
  */
 export default class HackamonSpawnController extends ControllerWithChannel {
-
-	private _channel!: Discord.Channel;
 
 	protected config: Config;
 
@@ -19,49 +19,29 @@ export default class HackamonSpawnController extends ControllerWithChannel {
 
 	public constructor(context: Context, config: Config) {
 		super(context);
-		this.channel_names = [config.request_channel];
+		this.channel_names = [config.spawn_channel];
 		this.config = config;
 
-		this.onDiscord('message', this._onMessage);
+		this.context.manager.hackamon.on('spawn', this._onSpawn.bind(this)); // TODO: Remove me on destroy.
 		// this.onDiscord('messageReactionAdd', this._onReaction);
 	}
 
-	private async _onMessage(message: Discord.Message) {
-		if (message.channel.id !== this.channel.get(this.config.request_channel)!.id) return;
-		if (message.author.id === this.context.discord.user!.id) return;
+	private async _onSpawn(hackamon: Hackamon, instance: HackamonInstance) {
+		const channel = this.channel.get(this.config.spawn_channel)! as TextChannel;
+		const imageUrl = this.context.manager.hackamon.hackamonLoader.getImageUrl(hackamon, instance);
 
-		const authorId = message.author.id;
-		const authorName = await getName(this.context, message.author);
-		const request = message.cleanContent;
-		const reward = null;
+		const message = new MessageEmbed()
+			.setColor(instance.shiny ? 0xffe357 : 0xaddcff)
+			.setTitle(`A wild ${hackamon.name} appeared!`)
+			.setImage(imageUrl);
+			// .setFooter("React to catch it!");
 
-		// Send the embed.
-		const reply = await message.channel.send(
-			new MessageEmbed()
-				.setTitle("Bounty Request")
-				.setDescription(request)
-				.setFooter(`Posted by: ${authorName}`)
-		) as Message;
+		await channel.send(message);
 
-		// Create the bounty.
-		const bounty = await this.context.manager.bounty.post({
-			id: reply.id,
-			bounty: request,
-			authorId,
-			authorName,
-			reward
-		});
-
-		// Delete the original.
-		await message.delete();
-
-		// Post reactions.
-		await reply.react(BOUNTY_COMPLETE_REACTION);
-		await reply.react(BOUNTY_CANCEL_REACTION);
-
-		// Log.
-		this.context.logger.info("Posted bounty.", bounty, {author: authorName});
+		console.log(message.image);
 	}
+
+	// TODO: Proper listener removal.
 
 }
 
@@ -70,6 +50,6 @@ export interface Config {
 	/**
 	 * The channel where requests are made and posted.
 	 */
-	request_channel: string;
+	spawn_channel: string;
 
 }

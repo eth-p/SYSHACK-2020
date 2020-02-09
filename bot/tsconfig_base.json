@@ -15,7 +15,7 @@
 			"$bot/*": ["module/bot/src/*"],
 			"$bounty/*": ["module/bounty/src/*"],
 			"$database/*": ["module/database/src/*"],
-			"$user/*": ["module/user/src/*"]
+			"$hackamon/*": ["module/hackamon/src/*"]
 		}
 	},
 	"exclude": [

@@ -10,8 +10,6 @@ import {reply} from "$bot/Util";
  */
 export default class BountyCancelController extends ControllerWithChannel {
 
-	private _channel!: Discord.Channel;
-
 	protected config: Config;
 
 	protected channel_names: string[];

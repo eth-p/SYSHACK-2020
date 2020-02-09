@@ -7,6 +7,8 @@ import BotInstance from "./BotInstance";
 import {Config as BountyRequestControllerConfig} from "./BountyRequestController";
 import {Config as BountyCompleteControllerConfig} from "./BountyCompleteController";
 import {Config as BountyCancelControllerConfig} from "./BountyCancelController";
+import {Config as HackamonSpawnControllerConfig} from "./HackamonSpawnController";
+import HackamonManager from "$hackamon/HackamonManager";
 
 export default interface Context {
 	instance: BotInstance;
@@ -16,13 +18,16 @@ export default interface Context {
 
 	manager: {
 		bounty: BountyManager;
+		hackamon: HackamonManager;
 	};
 
 	config: {
+		hackamon: {}
+			& HackamonSpawnControllerConfig,
 		bounty: {}
 			& BountyRequestControllerConfig
 			& BountyCancelControllerConfig
-			& BountyCompleteControllerConfig
+			& BountyCompleteControllerConfig;
 	}
 
 	logger: Logger,

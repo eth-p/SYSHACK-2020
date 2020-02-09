@@ -13,8 +13,6 @@ import Bounty from "$bounty/Bounty";
  */
 export default class BountyCompleteController extends ControllerWithChannel {
 
-	private _channel!: Discord.Channel;
-
 	protected config: Config;
 
 	protected channel_names: string[];

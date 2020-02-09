@@ -7,6 +7,7 @@ import BountyManager from "$bounty/BountyManager";
 
 import BotInstance from "./BotInstance";
 import Context from "./Context";
+import HackamonManager from "$hackamon/HackamonManager";
 
 /**
  * The main bot class.
@@ -124,4 +125,5 @@ export interface Config {
 
 export interface Managers {
 	bounty: BountyManager;
+	hackamon: HackamonManager;
 }

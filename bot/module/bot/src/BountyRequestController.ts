@@ -23,7 +23,6 @@ export default class BountyRequestController extends ControllerWithChannel {
 		this.config = config;
 
 		this.onDiscord('message', this._onMessage);
-		// this.onDiscord('messageReactionAdd', this._onReaction);
 	}
 
 	private async _onMessage(message: Discord.Message) {

@@ -18,8 +18,10 @@ dotenv.config();
 if (process.env['DISCORD_TOKEN'] == null)     throw new Error("Missing 'DISCORD_TOKEN' environment variable.");
 if (process.env['DISCORD_CLIENT_ID'] == null) throw new Error("Missing 'DISCORD_CLIENT_ID' environment variable.");
 if (process.env['DATABASE_URL'] == null) throw new Error("Missing 'DATABASE_URL' environment variable.");
+if (process.env['HACKAMON_DIR'] == null) throw new Error("Missing 'HACKAMON_DIR' environment variable.");
 
 process.env['DATABASE_URL'] = path.resolve(process.cwd(), process.env['DATABASE_URL']);
+process.env['HACKAMON_DIR'] = path.resolve(process.cwd(), process.env['HACKAMON_DIR']);
 
 // Start.
 require('./dist/bin/bot');

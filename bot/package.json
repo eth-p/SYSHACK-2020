@@ -11,6 +11,8 @@
   "license": "MIT",
   "devDependencies": {
     "@types/fs-extra": "^8.0.1",
+    "@types/glob": "^7.1.1",
+    "@types/js-yaml": "^3.12.2",
     "@types/lru-cache": "^5.1.0",
     "@types/uuid": "^3.4.7",
     "@types/winston": "^2.4.4",
@@ -20,6 +22,8 @@
     "discord.js": "github:discordjs/discord.js#fe7df708e44e0280dfaf0f8e457b154781bb5140",
     "dotenv": "^8.2.0",
     "fs-extra": "^8.1.0",
+    "glob": "^7.1.6",
+    "js-yaml": "^3.13.1",
     "long": "^4.0.0",
     "lru-cache": "^5.1.1",
     "module-alias": "^2.2.2",
