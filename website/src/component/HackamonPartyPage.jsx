@@ -32,6 +32,10 @@ class HackamonPartyPage extends React.Component {
 			</ul>
 
 			<div className="container center">
+					<img src="https://cdn.discordapp.com/attachments/665832778046373919/675899042995109918/party_frame.png" height="350" width="1100"/>
+			</div>
+
+			<div className="container center">
 					<HackamonBox></HackamonBox>
 			</div>
 		</div>
