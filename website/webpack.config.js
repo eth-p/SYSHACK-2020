@@ -69,6 +69,7 @@ module.exports = function (env, argv) {
 				filename: 'index.html',
 				title: 'Hackamon',
 				links: [
+					'https://stackpath.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css',
 					'/woff.css',
 					'/woff2.css'
 				]
