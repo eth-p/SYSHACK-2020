@@ -14,5 +14,5 @@ assets:
     sprite: petalina.png
     image:  petalina.png
   shiny:
-    sprite: petalina_shiny.png
-    image:  petalina_shiny.png
+    sprite: shiny_petalina.png
+    image:  shiny_petalina.png

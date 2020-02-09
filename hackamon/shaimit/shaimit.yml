@@ -14,5 +14,5 @@ assets:
     sprite: shaimit.png
     image:  shaimit.png
   shiny:
-    sprite: shaimit_shiny.png
-    image:  shaimit_shiny.png
+    sprite: shiny_shaimit.png
+    image:  shiny_shaimit.png

@@ -14,5 +14,5 @@ assets:
     sprite: riparin.png
     image:  riparin.png
   shiny:
-    sprite: riparin_shiny.png
-    image:  riparin_shiny.png
+    sprite: shiny_riparin.png
+    image:  shiny_riparin.png

@@ -4,7 +4,7 @@ const raster = require('gulp-raster');
 const rename = require('gulp-rename');
 
 gulp.task('svg', function () {
-	return gulp.src('./**/*.svg')
+	return gulp.src('./*/*.svg')
 		.pipe(raster())
 		.pipe(rename({dirname: 'assets/hackamon', extname: '.png'}))
 		.pipe(gulp.dest('./dist'))
