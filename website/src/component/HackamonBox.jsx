@@ -18,15 +18,16 @@ class HackamonBox extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			hackamonsData: [{Name:"Petalina", Type:"Grass", Img:"https://media.githubusercontent.com/media/eth-p/SYSHACK-2020/master/hackamon/petalina/petalina.png"}, 
-							{Name:"Riparin", Type:"Fire", Img:"https://media.githubusercontent.com/media/eth-p/SYSHACK-2020/master/hackamon/riparin/Riparin.png"},
-							{Name:"Shaimit", Type:"Water", Img:"https://media.githubusercontent.com/media/eth-p/SYSHACK-2020/master/hackamon/shaimit/shaimit.png"},
-							{Name:"Riparin", Type:"Fire", Img:"https://media.githubusercontent.com/media/eth-p/SYSHACK-2020/master/hackamon/riparin/Riparin.png"},
-							{Name:"Shaimit", Type:"Water", Img:"https://media.githubusercontent.com/media/eth-p/SYSHACK-2020/master/hackamon/shaimit/shaimit.png"},
-							{Name:"Petalina", Type:"Grass", Img:"https://media.githubusercontent.com/media/eth-p/SYSHACK-2020/master/hackamon/petalina/petalina.png"},
-							{Name:"Petalina", Type:"Grass", Img:"https://media.githubusercontent.com/media/eth-p/SYSHACK-2020/master/hackamon/petalina/petalina.png"},
-							{Name:"Shaimit", Type:"Water", Img:"https://media.githubusercontent.com/media/eth-p/SYSHACK-2020/master/hackamon/shaimit/shaimit.png"},
-							{Name:"Riparin", Type:"Fire", Img:"https://media.githubusercontent.com/media/eth-p/SYSHACK-2020/master/hackamon/riparin/Riparin.png"}],
+			hackamonsData: [{Name:"Petalina", Type:"Grass", Img:"https://i.imgur.com/cULYdnN.png"}, 
+							{Name:"Riparin", Type:"Fire", Img:"https://i.imgur.com/wvYMF78.png"},
+							{Name:"Shaimit", Type:"Water", Img:"https://i.imgur.com/DM68og4.png"},
+							{Name:"Petalina", Type:"Grass", Img:"https://i.imgur.com/cULYdnN.png"}, 
+							{Name:"Riparin", Type:"Fire", Img:"https://i.imgur.com/wvYMF78.png"},
+							{Name:"Shaimit", Type:"Water", Img:"https://i.imgur.com/DM68og4.png"},
+							{Name:"Shaimit", Type:"Water", Img:"https://i.imgur.com/DM68og4.png"},
+							{Name:"Petalina", Type:"Grass", Img:"https://i.imgur.com/cULYdnN.png"},
+							{Name:"Petalina", Type:"Grass", Img:"https://i.imgur.com/cULYdnN.png"}, 
+							{Name:"Riparin", Type:"Fire", Img:"https://i.imgur.com/wvYMF78.png"}],
 		};
     }
 
