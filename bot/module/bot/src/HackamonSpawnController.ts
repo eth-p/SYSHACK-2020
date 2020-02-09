@@ -30,6 +30,7 @@ export default class HackamonSpawnController extends ControllerWithChannel {
 		const channel = this.channel.get(this.config.spawn_channel)! as TextChannel;
 		const imageUrl = this.context.manager.hackamon.hackamonLoader.getImageUrl(hackamon, instance);
 
+		console.log(imageUrl);
 		const message = new MessageEmbed()
 			.setColor(instance.shiny ? 0xffe357 : 0xaddcff)
 			.setTitle(`A wild ${hackamon.name} appeared!`)
