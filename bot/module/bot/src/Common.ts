@@ -1,0 +1,2 @@
+export const BOUNTY_COMPLETE_REACTION = "\u2705";
+export const BOUNTY_CANCEL_REACTION = "\uD83D\uDED1";
