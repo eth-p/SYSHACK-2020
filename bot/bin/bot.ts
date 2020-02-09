@@ -54,8 +54,10 @@ const logger = Winston.createLogger({
 		cdn: process.env['CDN_URL']!,
 		spec: process.env['HACKAMON_DIR']!,
 		spawn: {
-			interval: 1000 * 30,
-			spawnChance: 0.25,
+			// interval: 1000 * 30,
+			// spawnChance: 0.25,
+			spawnChance: 0,
+			interval: 1000000,
 			shinyChance: 0.05
 		},
 	});
@@ -81,6 +83,7 @@ const logger = Winston.createLogger({
 	await bot.connect();
 
 	hackamon.setSpawning(true);
+	setTimeout(() => hackamon.spawn(true), 1000);
 })(process.env).then(() => {
 }, error => {
 	logger.error(error);

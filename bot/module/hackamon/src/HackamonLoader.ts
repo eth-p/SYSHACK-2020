@@ -23,7 +23,7 @@ export default class HackamonLoader {
 	public async load(file: string): Promise<Hackamon> {
 		const data = await Filesystem.readFile(file, 'utf-8');
 		const yaml = Yaml.safeLoad(data);
-		yaml.kind = Path.basename(file, Path.extname(file));
+		yaml.id = Path.basename(file, Path.extname(file));
 		return yaml;
 	}
 
