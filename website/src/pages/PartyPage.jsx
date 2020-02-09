@@ -8,9 +8,9 @@ import {hot} from 'react-hot-loader/root';
 // Controller
 // ---------------------------------------------------------------------------------------------------------------------
 
-export Controller from "../controllers/StorageController";
-import Controller from "../controllers/StorageController";
-import HackamonCollectionPage from "../component/HackamonCollectionPage";
+export Controller from "../controllers/PartyController";
+import Controller from "../controllers/PartyController";
+import HackamonPartyPage from "../component/HackamonPartyPage";
 
 // ---------------------------------------------------------------------------------------------------------------------
 // Component
@@ -21,7 +21,7 @@ class App extends React.Component {
 	static contextType = Controller.Context;
 
 	render() {
-		return <HackamonCollectionPage/>;
+		return <HackamonPartyPage/>;
 	}
 }
 
