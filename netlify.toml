@@ -1,4 +1,4 @@
 [build]
-base = "/"
-publish = "hackamon"
-command = "true"
+base = "/hackamon"
+publish = "dist"
+command = "npm run-script build"
