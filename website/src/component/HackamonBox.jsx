@@ -18,14 +18,15 @@ class HackamonBox extends React.Component {
 	constructor(props) {
 		super(props);
 		this.state = {
-			hackamonsData: [{Name:"Test", Img:"http://icons.iconarchive.com/icons/chrisbanks2/cold-fusion-hd/128/pikachu-icon.png"}, 
-							{Name:"Test", Img:"http://icons.iconarchive.com/icons/chrisbanks2/cold-fusion-hd/128/pikachu-icon.png"},
-							{Name:"Test", Img:"http://icons.iconarchive.com/icons/chrisbanks2/cold-fusion-hd/128/pikachu-icon.png"},
-							{Name:"Test", Img:"http://icons.iconarchive.com/icons/chrisbanks2/cold-fusion-hd/128/pikachu-icon.png"},
-							{Name:"Test", Img:"http://icons.iconarchive.com/icons/chrisbanks2/cold-fusion-hd/128/pikachu-icon.png"},
-							{Name:"Test", Img:"http://icons.iconarchive.com/icons/chrisbanks2/cold-fusion-hd/128/pikachu-icon.png"},
-							{Name:"Test", Img:"http://icons.iconarchive.com/icons/chrisbanks2/cold-fusion-hd/128/pikachu-icon.png"},
-							{Name:"Test", Img:"http://icons.iconarchive.com/icons/chrisbanks2/cold-fusion-hd/128/pikachu-icon.png"}],
+			hackamonsData: [{Name:"Petalina", Type:"Grass", Img:"https://media.githubusercontent.com/media/eth-p/SYSHACK-2020/master/hackamon/petalina/petalina.png"}, 
+							{Name:"Riparin", Type:"Fire", Img:"https://media.githubusercontent.com/media/eth-p/SYSHACK-2020/master/hackamon/riparin/Riparin.png"},
+							{Name:"Shaimit", Type:"Water", Img:"https://media.githubusercontent.com/media/eth-p/SYSHACK-2020/master/hackamon/shaimit/shaimit.png"},
+							{Name:"Riparin", Type:"Fire", Img:"https://media.githubusercontent.com/media/eth-p/SYSHACK-2020/master/hackamon/riparin/Riparin.png"},
+							{Name:"Shaimit", Type:"Water", Img:"https://media.githubusercontent.com/media/eth-p/SYSHACK-2020/master/hackamon/shaimit/shaimit.png"},
+							{Name:"Petalina", Type:"Grass", Img:"https://media.githubusercontent.com/media/eth-p/SYSHACK-2020/master/hackamon/petalina/petalina.png"},
+							{Name:"Petalina", Type:"Grass", Img:"https://media.githubusercontent.com/media/eth-p/SYSHACK-2020/master/hackamon/petalina/petalina.png"},
+							{Name:"Shaimit", Type:"Water", Img:"https://media.githubusercontent.com/media/eth-p/SYSHACK-2020/master/hackamon/shaimit/shaimit.png"},
+							{Name:"Riparin", Type:"Fire", Img:"https://media.githubusercontent.com/media/eth-p/SYSHACK-2020/master/hackamon/riparin/Riparin.png"}],
 		};
     }
 
