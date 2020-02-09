@@ -1,0 +1,18 @@
+name: Riparin
+type: [FIRE]
+
+stats:
+  health:            150
+  physical_attack:   100
+  phsyical_defence:  80
+  special_attack:    20
+  special_defence:   50
+  speed:             60
+
+assets:
+  regular:
+    sprite: riparin.png
+    image:  riparin.png
+  shiny:
+    sprite: riparin_shiny.png
+    image:  riparin_shiny.png

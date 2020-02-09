@@ -1,5 +1,5 @@
-name: Examplchu
-type: [FIRE]
+name: Petalina
+type: [GRASS]
 
 stats:
   health:            150
@@ -11,8 +11,8 @@ stats:
 
 assets:
   regular:
-    sprite: examplechu.png
-    image:  examplechu.png
+    sprite: petalina.png
+    image:  petalina.png
   shiny:
-    sprite: examplechu-shiny.png
-    image:  examplechu-shiny.png
+    sprite: petalina_shiny.png
+    image:  petalina_shiny.png

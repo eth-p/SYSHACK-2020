@@ -1,0 +1,18 @@
+name: Shaitmit
+type: [WATER]
+
+stats:
+  health:            150
+  physical_attack:   100
+  phsyical_defence:  80
+  special_attack:    20
+  special_defence:   50
+  speed:             60
+
+assets:
+  regular:
+    sprite: shaimit.png
+    image:  shaimit.png
+  shiny:
+    sprite: shaimit_shiny.png
+    image:  shaimit_shiny.png
